@@ -1,0 +1,112 @@
+@font-face {
+  font-family: neue;
+  src: url(./fonts/NeueMachina-Regular_DQCmjH1st.ttf);
+}
+@font-face {
+  font-family: halva;
+  src: url(./fonts/Helvetica_NTUXwLmxSC.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: black;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 42px;
+  position: fixed;
+  width: 100%;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-left img {
+  height: 45px;
+  cursor: pointer;
+}
+
+.nav-left h4 {
+  width: 150px;
+  font-family: neue;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.nav-right img {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav-right h4 {
+  font-family: neue;
+  cursor: pointer;
+}
+
+.nav-right h4 i {
+  font-size: 18px;
+}
+
+.nav-phone {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  display: none;
+}
+
+.nav-phone h4 i {
+  font-size: 19px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  nav {
+    padding: 9px 16px;
+  }
+
+  .nav-left {
+    gap: 10px;
+  }
+  .nav-left img {
+    height: 27px;
+  }
+  .nav-left h4 {
+    font-size: 14px;
+    width: 120px;
+    font-family: neue;
+    line-height: 1.2;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .nav-phone {
+    display: flex;
+  }
+}
