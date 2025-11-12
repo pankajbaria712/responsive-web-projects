@@ -1,0 +1,112 @@
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  margin: 0;
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background-color: #2b2b40;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.25rem;
+  font-weight: 800;
+  color: #a78bfa;
+}
+header p {
+  margin-top: 0;
+  color: #94a3b8;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+}
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project {
+  background: #2b2b40;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 5px 15px rgba(0, 0, 0, 0.4);
+  border-color: #8b5cf6;
+}
+.project h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #8b5cf6;
+  border-bottom: 2px solid #8b5cf6;
+  display: inline-block;
+  padding-bottom: 0.25rem;
+}
+.project p {
+  color: #94a3b8;
+}
+.project.placeholder {
+  opacity: 0.6;
+  border-style: dashed;
+  border-color: #94a3b8;
+}
+
+.project-links {
+  margin-top: 1rem;
+}
+.project-links a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  margin-right: 0.75rem;
+  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+.project-links a.link-live {
+  background-color: #8b5cf6;
+  color: #e0e0e0;
+}
+.project-links a.link-live:hover {
+  background-color: #a78bfa;
+  transform: translateY(-2px);
+}
+.project-links a.link-code {
+  background-color: transparent;
+  color: #10b981;
+  border: 1px solid #10b981;
+}
+.project-links a.link-code:hover {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: #10b981;
+}
+
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}/*# sourceMappingURL=style.css.map */

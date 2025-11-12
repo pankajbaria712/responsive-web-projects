@@ -1,0 +1,148 @@
+// style.scss
+
+// 1. Variables
+$dark-bg: #1e1e2f; // Deep, rich background
+$dark-card-bg: #2b2b40; // Slightly lighter card background
+$text-light: #e0e0e0; // Main text color
+$text-muted: #94a3b8; // Subdued text for paragraphs
+$accent-primary: #8b5cf6; // Vibrant purple/indigo accent
+$accent-hover: #a78bfa; // Lighter accent on hover
+$link-code: #10b981; // Green for code link
+
+$breakpoint-desktop: 768px;
+
+// 2. Mixins
+// This mixin correctly sets the box-shadow property
+@mixin shadow-effect($color: rgba(0, 0, 0, 0.4)) {
+  box-shadow: 0 4px 12px $color, 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+// 3. Base Styles
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  margin: 0;
+  background-color: $dark-bg;
+  color: $text-light;
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+// 4. Header
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background-color: $dark-card-bg;
+  @include shadow-effect(); // Correct mixin usage
+  border-radius: 12px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 0.25rem;
+    font-weight: 800;
+    color: $accent-hover;
+  }
+
+  p {
+    margin-top: 0;
+    color: $text-muted;
+  }
+}
+
+// 5. Projects Grid (Responsive)
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+
+  @media (max-width: $breakpoint-desktop) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// 6. Project Card Styles
+.project {
+  background: $dark-card-bg;
+  border-radius: 16px;
+  padding: 1.5rem;
+  // Use the mixin for the initial shadow
+  @include shadow-effect(rgba(0, 0, 0, 0.5));
+  // Transition the transform and box-shadow properties
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  &:hover {
+    transform: translateY(-8px);
+    // Explicitly set the new box-shadow property (not a mixin call here)
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-color: $accent-primary;
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: $accent-primary;
+    border-bottom: 2px solid $accent-primary;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+  }
+
+  p {
+    color: $text-muted;
+  }
+
+  &.placeholder {
+    opacity: 0.6;
+    border-style: dashed;
+    border-color: $text-muted;
+  }
+}
+
+// 7. Links
+.project-links {
+  margin-top: 1rem;
+
+  a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-right: 0.75rem;
+    transition: background-color 0.2s, color 0.2s, transform 0.1s;
+
+    &.link-live {
+      background-color: $accent-primary;
+      color: $text-light;
+      &:hover {
+        background-color: $accent-hover;
+        transform: translateY(-2px);
+      }
+    }
+
+    &.link-code {
+      background-color: transparent;
+      color: $link-code;
+      border: 1px solid $link-code;
+      &:hover {
+        background-color: rgba($link-code, 0.1);
+        border-color: $link-code;
+      }
+    }
+  }
+}
+
+// 8. Footer
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
