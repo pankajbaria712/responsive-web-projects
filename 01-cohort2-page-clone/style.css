@@ -347,6 +347,115 @@ main {
   white-space: nowrap;
 }
 
+/* ***************Section-04 (Enhanced)***************** */
+.section-04 {
+  padding: 80px 8%;
+  font-family: "halva", sans-serif;
+  /* background: var(--b); fallback if dark theme */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative light gradient behind cards (optional glow) */
+.section-04::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Title */
+.section-04 .title {
+  font-size: clamp(1.8rem, 3vw, 3.5rem);
+  text-align: center;
+  padding-bottom: 50px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #fff, #a0a0a0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.section-04 .cards .card .card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-04 .cards .card-02 .card-title h5 {
+  color: #e74c3c;
+}
+.section-04 .cards .card-02 .card-title p span {
+  color: #e74c3c;
+}
+
+/* Cards container */
+.section-04 .cards {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Card design */
+.section-04 .cards .card {
+  flex: 1 1 320px;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.4s ease;
+  transform: translateY(0);
+}
+
+/* Hover animation */
+.section-04 .cards .card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Card text list */
+.section-04 .cards .card ul {
+  list-style: none;
+  font-size: 1rem;
+  line-height: 1.9;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* optional bullet effect */
+.section-04 .cards .card ul li::before {
+  content: "•";
+  color: #bb00ff;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .section-04 {
+    padding: 60px 5%;
+  }
+  .section-04 .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-04 .cards .card {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
 /* ***************Tab View styles***************** */
 
 @media (max-width: 1300px) {
