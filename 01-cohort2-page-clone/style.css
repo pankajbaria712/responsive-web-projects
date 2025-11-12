@@ -1,3 +1,5 @@
+/* ***************Root Variables***************** */
+
 :root {
   --gray: #212121;
   --lgray: #929292;
@@ -7,6 +9,8 @@
   --lblack: #151515;
 }
 
+/* ***************Fonts Declaration***************** */
+
 @font-face {
   font-family: neue;
   src: url(./fonts/NeueMachina-Regular_DQCmjH1st.ttf);
@@ -14,6 +18,10 @@
 @font-face {
   font-family: halva;
   src: url(./fonts/Helvetica_NTUXwLmxSC.ttf);
+}
+@font-face {
+  font-family: halva-bold;
+  src: url(./fonts/HelveticaNowDisplay-Bold_VMHV5twUMR.ttf);
 }
 
 * {
@@ -39,6 +47,8 @@ body {
 .lgray {
   color: var(--lgray);
 }
+
+/* ***************Navbar Styles***************** */
 
 nav {
   display: flex;
@@ -101,6 +111,8 @@ nav {
   cursor: pointer;
 }
 
+/* ***************Navbar Mobile View***************** */
+
 @media (max-width: 700px) {
   nav {
     padding: 9px 16px;
@@ -129,8 +141,11 @@ nav {
 }
 
 main {
-  padding-top: 80px;
+  padding-top: 80px; /* padding for whole page */
 }
+
+/* ***************Section-01 Style for desktop view***************** */
+
 .section-01 {
   display: flex;
   align-items: flex-start;
@@ -139,6 +154,7 @@ main {
   font-family: halva;
 }
 
+/* ------------Section-01 Left Side------------ */
 .section-01 .left h1 {
   font-size: 2.8rem;
   width: 68%;
@@ -196,10 +212,8 @@ main {
 .section-01 .left h6 {
   font-size: 22px;
 }
-/* 
-.section-01 .right .right-in {
-  wi
-} */
+
+/* ------------Section-01 Right Side------------ */
 
 .section-01 .right {
   line-height: 0;
@@ -229,7 +243,90 @@ main {
   color: var(--green);
 }
 
+/* ***************Section-02 Style for desktop view***************** */
+
+.section-02 .top {
+  text-align: center;
+  font-family: halva-bold;
+}
+
+.h1_with_bloom {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Base styles used by both layers */
+.h1_with_bloom h1 {
+  margin: 0;
+  font-size: 11vmax;
+  background: url("https://ik.imagekit.io/sheryians/Aptitude%20&%20Reasoning/mask%20Large_ZB4lGN8hWZ.png")
+    center/cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+/* BLUR layer - placed behind, scaled a little so the blur has room to spread */
+.h1_with_bloom h1.bloom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transform-origin: center;
+  transform: translateZ(0) scale(1.04); /* scale up so blur isn't clipped by shape */
+  filter: blur(50px); /* px only — tweak to taste */
+  opacity: 0.85; /* soften the bloom */
+  pointer-events: none;
+  will-change: filter, transform;
+}
+
+/* SHARP layer - sits on top */
+.h1_with_bloom h1.sharp {
+  position: relative; /* placed above the blur */
+  z-index: 1;
+}
+
+/* subtle vignette behind heading (optional) */
+.section-02 {
+  padding: 90px 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-02 .sub {
+  font-family: halva;
+  font-size: 2.7vmax;
+  font-weight: 500;
+}
+
+.section-02 .bottom {
+  padding: 36px 0vw 0vw 0vw;
+}
+.section-02 .bottom img {
+  width: 45vmax;
+}
+
+/* Responsive: reduce blur/scale on small screens */
+@media (max-width: 600px) {
+  .h1_with_bloom h1 {
+    font-size: 18vw;
+  }
+  .h1_with_bloom h1.bloom {
+    filter: blur(16px);
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+/* ***************Tab View styles***************** */
+
 @media (max-width: 1300px) {
+  /* ------------Section-01 Style------------ */
   .section-01 .left h1 {
     font-size: 3.6vmax;
   }
@@ -241,11 +338,16 @@ main {
     font-size: 1.2vmax;
   }
 }
-@media (max-width: 700px) {
 
+/* ***************Mobile View Styles***************** */
+
+@media (max-width: 700px) {
   main {
     padding-top: 8vw;
   }
+
+  /* ------------Section-01 Styles------------ */
+
   .section-01 {
     flex-direction: column-reverse;
     padding: 10px;
