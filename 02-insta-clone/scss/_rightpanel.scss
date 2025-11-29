@@ -1,0 +1,23 @@
+.right-panel {
+  padding: 4rem 2rem;
+
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .profiles {
+    padding: 1rem;
+    .pro {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      img {
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

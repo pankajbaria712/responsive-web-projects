@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+@import "sidebar";
+@import "feed";
+@import "rightpanel";
+
+body {
+  display: grid;
+  grid-template-columns: 330px 1fr 370px;
+  background-color: #000000;
+  color: white;
+}
+
+/* image container must be relative for big-heart */
+.post .img {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px; /* optional */
+}
+
+/* post image */
+.post .post-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Big heart (double-tap) */
+.big-heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  font-size: 96px;
+  color: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.35s;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+.big-heart.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* icon button baseline */
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  color: inherit;
+}
+
+/* small pop animation class */
+.icon-btn.pop {
+  transform: scale(1.25);
+  transition: transform 0.18s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+/* like active style */
+.like-icon.liked {
+  color: #e74c3c; /* red */
+  transform: scale(1.05);
+}
+
+/* we also highlight the count when liked */
+.like-count.liked {
+  color: #e74c3c;
+  transition: color 0.18s;
+}
+
+/* save active (filled) */
+.save-btn .ri-save-fill,
+.save-btn .active {
+  color: #111;
+}
+
+/* accessibility focus */
+.icon-btn:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.08);
+  outline-offset: 2px;
+  border-radius: 6px;
+}

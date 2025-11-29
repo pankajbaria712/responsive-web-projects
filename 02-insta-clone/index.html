@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Clone</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./scss/main.css" />
+  </head>
+  <body>
+    <!-- Left menu -->
+    <aside class="sidebar">
+      <h2>Instagram</h2>
+      <div class="menu">
+        <div>
+          <h4><i class="ri-home-5-fill"></i> Home</h4>
+        </div>
+        <div>
+          <h4><i class="ri-search-eye-line"></i> Search</h4>
+        </div>
+        <div>
+          <h4><i class="ri-compass-discover-line"></i> Explore</h4>
+        </div>
+        <div>
+          <h4><i class="ri-google-play-fill"></i> Reels</h4>
+        </div>
+        <div>
+          <h4><i class="ri-send-plane-fill"></i> Messages</h4>
+        </div>
+        <div>
+          <h4><i class="ri-heart-3-line"></i> Notification</h4>
+        </div>
+        <div>
+          <h4><i class="ri-add-large-line"></i> Create</h4>
+        </div>
+        <div class="b-menu">
+          <img src="./assets/profile.png" alt="" />
+          <h4>Profile</h4>
+        </div>
+      </div>
+    </aside>
+    <!-- Center feed -->
+    <main class="feed">
+      <div class="story">
+        <div id="story-1">
+          <div class="img-box">
+            <img src="./assets/s1.png" alt="" class="image-border" />
+          </div>
+          <p>pruthviraj...</p>
+        </div>
+        <div id="story-2">
+          <div class="img-box">
+            <img src="./assets/s2.png" alt="" class="image-border" />
+          </div>
+          <p>sarthack.s...</p>
+        </div>
+        <div id="story-3">
+          <div class="img-box">
+            <img src="./assets/s3.png" alt="" class="image-border" />
+          </div>
+          <p>tensor._.boy</p>
+        </div>
+        <div id="story-4">
+          <div class="img-box">
+            <img src="./assets/s4.png" alt="" class="image-border" />
+          </div>
+          <p>coder.s</p>
+        </div>
+        <div id="story-5">
+          <div class="img-box">
+            <img src="./assets/s5.png" alt="" class="image-border" />
+          </div>
+          <p>keshavbar...</p>
+        </div>
+        <div id="story-6">
+          <div class="img-box">
+            <img src="./assets/profile.png" alt="" class="image-border" />
+          </div>
+          <p>mr_pank...</p>
+        </div>
+      </div>
+      <div class="post">
+        <div class="heading">
+          <div>
+            <div class="img-box">
+              <img src="./assets/s2.png" alt="" class="image-border" />
+            </div>
+            <h3>Pankaj Baria <span>. 1d</span></h3>
+          </div>
+          <div>
+            <i class="ri-more-2-line"></i>
+          </div>
+        </div>
+
+        <div class="img">
+          <img class="post-img" src="./assets/p1.png" alt="" />
+          <!-- big heart for double-tap -->
+          <i class="big-heart ri-heart-fill"></i>
+        </div>
+
+        <div class="bottom">
+          <div class="bottom-left">
+            <!-- like button: icon + count -->
+            <button class="icon-btn like-btn" aria-label="Like">
+              <i class="like-icon ri-thumb-up-line" aria-hidden="true"></i>
+              <span class="like-count">3</span>
+            </button>
+
+            <!-- comment (no functionality here) -->
+            <button class="icon-btn" aria-label="Comment">
+              <i class="ri-chat-1-line" aria-hidden="true"></i>
+              <span class="comment-count">2</span>
+            </button>
+
+            <!-- send -->
+            <button class="icon-btn" aria-label="Send">
+              <i class="ri-send-plane-fill" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="bottom-right">
+            <button class="icon-btn save-btn" aria-label="Save">
+              <i class="ri-save-line" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="post">
+        <div class="heading">
+          <div>
+            <div class="img-box">
+              <img src="./assets/profile.png" alt="" class="image-border" />
+            </div>
+            <h3>Pankaj Baria <span>. 1d</span></h3>
+          </div>
+          <div>
+            <i class="ri-more-2-line"></i>
+          </div>
+        </div>
+        <div class="img">
+          <img id="p" src="./assets/p2.png" alt="" srcset="" />
+        </div>
+        <div class="bottom">
+          <div class="bottom-left">
+            <i id="like" class="ri-thumb-up-line">3</i>
+            <i class="ri-chat-1-line">2</i>
+            <i class="ri-send-plane-fill"></i>
+          </div>
+          <div class="bottom-right">
+            <i id="save" class="ri-save-line"></i>
+          </div>
+        </div>
+      </div> -->
+    </main>
+    <!-- Suggestions -->
+    <aside class="right-panel">
+      <div class="heading">
+        <h3>Suggested for you</h3>
+        <p>See All</p>
+      </div>
+      <div class="profiles">
+        <div class="pro">
+          <img src="./assets/profile.png" alt="" />
+          <div>
+            <h4>Pankaj Baria</h4>
+            <p>followed by mr_bhupendra_</p>
+          </div>
+          <a href="">Follow</a>
+        </div>
+        <div class="pro">
+          <img src="./assets/profile.png" alt="" />
+          <div>
+            <h4>Pankaj Baria</h4>
+            <p>followed by mr_bhupendra_</p>
+          </div>
+          <a href="">Follow</a>
+        </div>
+        <div class="pro">
+          <img src="./assets/profile.png" alt="" />
+          <div>
+            <h4>Pankaj Baria</h4>
+            <p>followed by mr_bhupendra_</p>
+          </div>
+          <a href="">Follow</a>
+        </div>
+        <div class="pro">
+          <img src="./assets/profile.png" alt="" />
+          <div>
+            <h4>Pankaj Baria</h4>
+            <p>followed by mr_bhupendra_</p>
+          </div>
+          <a href="">Follow</a>
+        </div>
+        <div class="pro">
+          <img src="./assets/profile.png" alt="" />
+          <div>
+            <h4>Pankaj Baria</h4>
+            <p>followed by mr_bhupendra_</p>
+          </div>
+          <a href="">Follow</a>
+        </div>
+      </div>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>

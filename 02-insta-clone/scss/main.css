@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar h2 {
+  padding: 2rem 2rem;
+}
+.sidebar .menu {
+  margin-top: 2.4rem;
+  width: 100%;
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  font-size: 1.3rem;
+}
+.sidebar .menu i {
+  padding-right: 8px;
+}
+.sidebar .menu .b-menu {
+  display: flex;
+}
+.sidebar .menu .b-menu img {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+.sidebar .menu .b-menu h4 {
+  margin: 5px;
+  font-size: 1.3rem;
+}
+
+.story {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.story img {
+  height: 4vw;
+  width: 4vw;
+}
+
+.story div .img-box {
+  margin-right: 0.8vw;
+  display: inline-block;
+  padding: 4px; /* Border thickness */
+  border-radius: 50%; /* Rounded gradient border */
+  background: linear-gradient(45deg, #ffd000, #d600c8);
+}
+.story div .img-box img {
+  display: block;
+  border-radius: 50%; /* Inner image radius */
+}
+
+.story div {
+  margin: 1.2vw;
+}
+.story div p {
+  text-align: center;
+}
+
+.post {
+  margin: 2vw 9vw;
+}
+.post .heading {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  justify-content: space-between;
+}
+.post .heading img {
+  height: 3vw;
+  width: 3vw;
+}
+.post .heading h3 span {
+  opacity: 0.5;
+}
+.post .heading i {
+  rotate: 90deg;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.post .heading div .img-box {
+  margin-right: 0.8vw;
+  display: inline-block;
+  padding: 4px; /* Border thickness */
+  border-radius: 50%; /* Rounded gradient border */
+  background: linear-gradient(45deg, #ffd000, #d600c8);
+}
+.post .heading div .img-box img {
+  display: block;
+  border-radius: 50%; /* Inner image radius */
+}
+
+.post .heading div {
+  display: flex;
+  align-items: center;
+}
+
+.post .img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.post .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.right-panel {
+  padding: 4rem 2rem;
+}
+.right-panel .heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.right-panel .profiles {
+  padding: 1rem;
+}
+.right-panel .profiles .pro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.right-panel .profiles .pro img {
+  height: 40px;
+  border-radius: 50%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 330px 1fr 370px;
+  background-color: #000000;
+  color: white;
+}
+
+/* image container must be relative for big-heart */
+.post .img {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px; /* optional */
+}
+
+/* post image */
+.post .post-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Big heart (double-tap) */
+.big-heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  font-size: 96px;
+  color: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.35s;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+
+.big-heart.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* icon button baseline */
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  color: inherit;
+}
+
+/* small pop animation class */
+.icon-btn.pop {
+  transform: scale(1.25);
+  transition: transform 0.18s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+/* like active style */
+.like-icon.liked {
+  color: #e74c3c; /* red */
+  transform: scale(1.05);
+}
+
+/* we also highlight the count when liked */
+.like-count.liked {
+  color: #e74c3c;
+  transition: color 0.18s;
+}
+
+/* save active (filled) */
+.save-btn .ri-save-fill,
+.save-btn .active {
+  color: #111;
+}
+
+/* accessibility focus */
+.icon-btn:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.08);
+  outline-offset: 2px;
+  border-radius: 6px;
+}/*# sourceMappingURL=main.css.map */
